@@ -429,8 +429,15 @@ print('f1_score', sklearn.metrics.f1_score(pred,labels))
 # print('Accuracy', (pred == labels).sum().item() / len(pred))
 
 # %%
+logitss = net(dgl_graph, inputs)
+
+aaa=logitss[test_mask].detach()
+output_sfmx=torch.softmax(aaa, dim=1)[:,1]  # 取输出结果的概率，并取第二列
+labelss = node_labels[test_mask]
+
 from sklearn.metrics import roc_curve
-fpr, tpr, thersholds = roc_curve(pred, labels, pos_label=1)
+fpr, tpr, thersholds = roc_curve(labelss,output_sfmx, pos_label=1)
+
 print(pred[:100])
 print(labels[:100])
 from sklearn.metrics import auc
