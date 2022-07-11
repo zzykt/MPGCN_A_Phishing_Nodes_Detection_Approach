@@ -146,8 +146,8 @@ dgl_graph = d.from_networkx(graph, node_attrs=['isp'], edge_attrs=['timestamp','
 print("dgl IS successful create! ")
 print('We have %d nodes.' % dgl_graph.number_of_nodes())
 print('We have %d edges.' % dgl_graph.number_of_edges())
-# We have 100804 nodes.
-# We have 222091 edges.
+# We have 104209 nodes.
+# We have 251625 edges.
 
 # %%
 print(time.strftime("%Y-%m-%d %H:%M:%S", time.localtime()) )
