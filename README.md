@@ -13,3 +13,8 @@ xblock.pro给的数据集有K1（一阶邻域）的，还有K2的，k1中钓鱼�
 ps：K2中的1600个节点中有400+节点他们的一阶交易数量少于5个，k1中钓鱼节点1300个节点至少都有5笔交易。
 
 set文件夹包含一阶钓鱼节点和非钓鱼节点的所有交易csv文件。
+
+
+net_module.pth是我已经训练好的模型，直接那去用就行。在class GCN(nn.Module) 之后
+net=GCN(dem,hidden_size,2)#dem=16 hidden_size=8
+net.load_state_dict(torch.load('./net_module.pth'))
